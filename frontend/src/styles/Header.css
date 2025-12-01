@@ -1,0 +1,86 @@
+
+/* --- Header Container Styles --- */
+.main-header {
+    background-color: #121212;
+    color: white; 
+    padding: 15px 30px; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    
+    width: 100%;
+    box-sizing: border-box; 
+    position: sticky; /* Optional: Makes the header stick to the top */
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- App Name/Logo Styles --- */
+.app-name {
+    font-size: 1.8em; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #e9c7ee;
+}
+
+/* --- Navigation List Styles --- */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    display: flex;
+    gap: 25px; 
+}
+
+/* --- Navigation Link Styles --- */
+.main-nav a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.1em;
+    padding: 5px 10px; 
+    transition: color 0.3s, background-color 0.3s; 
+}
+
+/* --- Hover/Active Styles for Links --- */
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #e197ef; 
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Media Query for Mobile (e.g., screens smaller than 768px) */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  
+  .menu-toggle {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  .navbar {
+    /* Initially hidden and off-screen */
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #111; /* Slightly different dark shade */
+    z-index: 10;
+    padding-bottom: 10px;
+  }
+  
+  .navbar.open {
+    display: block; /* Show when open state is true */
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Stack links vertically */
+    text-align: center;
+  }
+  
+  .navbar li {
+    border-bottom: 1px solid #333;
+  }
+}

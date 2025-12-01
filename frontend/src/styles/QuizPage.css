@@ -1,0 +1,208 @@
+/* src/pages/QuizPage.css */
+
+.quiz-page-container {
+  background-color: #0d0d0d; /* Slightly lighter than pure black for depth */
+  color: #e0e0e0; /* Off-white for text */
+  min-height: calc(100vh - 60px); /* Adjust 60px if your header height is different */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.quiz-title {
+  font-size: 2.5em;
+  color: #e197ef;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.quiz-intro-text {
+  font-size: 1.1em;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #b0b0b0;
+}
+
+.questions-list {
+  width: 100%;
+  max-width: 900px; /* Limit width for readability */
+  margin-bottom: 40px;
+}
+
+.question-card {
+  background-color: #1a1a1a; /* Darker card background */
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.question-text {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.options-group {
+  display: flex;
+  flex-wrap: wrap; /* Allows options to wrap on smaller screens */
+  gap: 15px; /* Space between radio buttons */
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  background-color: #333; /* Option background */
+  color: #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 25px; /* More rounded corners for options */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 120px; /* Ensure options have a minimum clickable area */
+  justify-content: center;
+}
+
+.option-label:hover {
+  background-color: #9c27b0; /* Highlight on hover (green from your buttons) */
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.4);
+}
+
+.option-label input[type="radio"] {
+  /* Hide default radio button but keep it accessible */
+  display: none;
+}
+
+.option-label input[type="radio"]:checked + span {
+  /* Style for checked state */
+  background-color: #9c27b0; /* Green for selected option */
+  color: #fff;
+  border-color: #9c27b0;
+  box-shadow: 0 2px 10px #9c27b0;
+  transform: scale(1.02); /* Slight scale on checked */
+}
+
+/* Custom styling for the visual indicator of selected option */
+.option-label span {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 20px;
+    padding: 8px 15px; /* Adjust padding to match label */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Style for actual visual of radio */
+.option-label input[type="radio"]:checked ~ span {
+    background-color: #9c27b0; /* Green highlight */
+    border-color: #9c27b0;
+    font-weight: bold;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #9c27b0; /* Green color for action */
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.submit-button:hover {
+  background-color: #e197ef; /* Slightly darker green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px #9c27b0;
+}
+
+.submit-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Results Section (if you display results on the same page) */
+.quiz-results {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-results h2 {
+    color: #9c27b0;
+    margin-bottom: 20px;
+}
+
+.quiz-results p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive Adjustments */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .quiz-title {
+    font-size: 2em;
+  }
+
+  .quiz-intro-text {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .question-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .question-text {
+    font-size: 1.1em;
+  }
+
+  .options-group {
+    flex-direction: column; /* Stack options vertically on small screens */
+    gap: 10px;
+  }
+
+  .option-label {
+    width: 100%; /* Full width for options */
+    padding: 10px 15px;
+    border-radius: 5px; /* Less rounded for stacked items */
+    min-width: unset;
+  }
+  
+  .option-label input[type="radio"]:checked + span {
+     /* Re-style the inner span to take full width when stacked */
+     width: 100%;
+     padding: 10px 15px;
+     border-radius: 5px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
+}
