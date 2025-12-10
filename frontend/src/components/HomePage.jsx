@@ -122,12 +122,12 @@ const HomePage = () => {
           </div>
           <div className="footer-section">
             <h3>Contact</h3>
-            <p>Email: contact@alzheimercare.com</p>
+            <p>Email: contact@alzguardai.com</p>
             <p>Phone: +1 (555) 123-4567</p>
           </div>
         </div>
         <div className="copyright">
-          <p>&copy; 2023 AlzheimerCare. All rights reserved.</p>
+          <p>&copy; 2025 AlzGuard.AI. All rights reserved.</p>
         </div>
       </footer>
     </div>

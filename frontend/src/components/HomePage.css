@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #481949;
+  background-color: #289f38;
   color: #ffffff;
   line-height: 1.6;
   padding: 15px 30px; 
@@ -48,7 +48,7 @@ body {
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #e197ef;
+  color: #289f38;
 }
 
 .hero-content p {
@@ -88,12 +88,12 @@ body {
 
 .btn-secondary {
   background-color: transparent;
-  color: #9c27b0;
-  border: 2px solid #9c27b0;
+  color: #f8f5f8;
+  border: 2px solid #289f38;
 }
 
 .btn-secondary:hover {
-  background-color: #9c27b0;
+  background-color: #289f38;
   color: white;
 }
 
@@ -122,7 +122,7 @@ body {
 
 .stat-card h2 {
   font-size: 2.5rem;
-  color: #9c27b0;
+  color: #289f38;
   margin-bottom: 10px;
 }
 
@@ -147,7 +147,7 @@ body {
 .tech-content h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #e197ef;
+  color: #289f38;
 }
 
 .tech-content p {
@@ -169,7 +169,7 @@ body {
 }
 
 .tech-feature h3 {
-  color: #9c27b0;
+  color: #7ede8b;
   margin-bottom: 10px;
 }
 
@@ -194,7 +194,7 @@ body {
   margin-left: 0px;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #e197ef;
+  color: #289f38;
 }
 
 .feature-cards {
@@ -224,7 +224,7 @@ body {
 }
 
 .feature-card h3 {
-  color: #9c27b0;
+  color: #289f38;
   margin-bottom: 15px;
   font-size: 1.5rem;
 }
@@ -241,7 +241,7 @@ body {
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .cta p {
@@ -277,7 +277,7 @@ body {
 }
 
 .footer-section h3 {
-  color: #9c27b0;
+  color: #289f38;
   margin-bottom: 20px;
   font-size: 1.3rem;
 }
@@ -297,7 +297,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .copyright {

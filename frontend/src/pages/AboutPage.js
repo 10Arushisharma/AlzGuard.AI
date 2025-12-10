@@ -67,32 +67,19 @@ const AboutPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Mohit Derek",
+      name: "Anjali Sahni",
       role: "AI/ML Developer",
       bio: "Neurologist with 15+ years of experience in Alzheimer's research and treatment.",
       image: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
       id: 2,
-      name: "Nihal Tosavda",
+      name: "Arushi Sharma",
       role: "Lead Developer",
       bio: "Machine learning expert specializing in medical imaging and diagnostic algorithms.",
       image: "/images/nihal.jpg"
     },
-    {
-      id: 3,
-      name: "Kushagra Agrawal",
-      role: "Assistant Developer",
-      bio: "Geriatric psychiatrist focused on dementia care and patient support programs.",
-      image: "https://randomuser.me/api/portraits/women/44.jpg"
-    },
-    {
-      id: 4,
-      name: "Mohit Yogi",
-      role: "Security Analysis",
-      bio: "Software engineer with expertise in healthcare applications and data security.",
-      image: "https://randomuser.me/api/portraits/men/75.jpg"
-    }
+    
   ];
 
   // Company values

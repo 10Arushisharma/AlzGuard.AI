@@ -28,7 +28,7 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #9c27b0;
+  color: #289f38;
   text-align: center;
 }
 
@@ -57,12 +57,12 @@ h1 {
 }
 
 .tab.active {
-  color: #9c27b0;
-  border-bottom: 3px solid #9c27b0;
+  color: #289f38;
+  border-bottom: 3px solid #289f38;
 }
 
 .tab:hover {
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .upload-section {
@@ -80,7 +80,7 @@ h1 {
 }
 
 .upload-area:hover {
-  border-color: #9c27b0;
+  border-color: #289f38;
   background-color: rgba(156, 39, 176, 0.05);
 }
 
@@ -94,7 +94,7 @@ h1 {
 .upload-icon {
   font-size: 4rem;
   margin-bottom: 20px;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .upload-note {
@@ -123,7 +123,7 @@ h1 {
   display: block;
   width: 20%;
   padding: 15px;
-  background-color: #9c27b0;
+  background-color: #289f38;
   color: white;
   border: none;
   border-radius: 30px;
@@ -162,7 +162,7 @@ h1 {
   width: 50px;
   height: 50px;
   border: 5px solid #333;
-  border-top: 5px solid #9c27b0;
+  border-top: 5px solid #289f38;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 20px;
@@ -187,17 +187,17 @@ h1 {
 .results h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .results p {
-  color: #9c27b0;
+  color: #289f38;
   font-size: 1.5rem;
   margin-top: 5px;
 }
 
 .results h3 {
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .results ul {
@@ -248,7 +248,7 @@ h1 {
 .result-stage .value {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .result-section {
@@ -256,7 +256,7 @@ h1 {
 }
 
 .result-section h3 {
-  color: #9c27b0;
+  color: #289f38;
   margin-bottom: 15px;
   font-size: 1.2rem;
 }
@@ -274,7 +274,7 @@ h1 {
 
 .result-section li:before {
   content: "•";
-  color: #9c27b0;
+  color: #289f38;
   position: absolute;
   left: 0;
   font-size: 1.5rem;
@@ -285,7 +285,7 @@ h1 {
   display: block;
   width: 100%;
   padding: 15px;
-  background-color: #9c27b0;
+  background-color: #289f38;
   color: white;
   border: none;
   border-radius: 30px;
@@ -297,7 +297,7 @@ h1 {
 }
 
 .btn-primary:hover {
-  background-color: #7b1fa2;
+  background-color: #289f38;
 }
 
 .how-it-works {
@@ -308,7 +308,7 @@ h1 {
 .how-it-works h2 {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .steps {
@@ -330,7 +330,7 @@ h1 {
 .step-number {
   width: 40px;
   height: 40px;
-  background-color: #9c27b0;
+  background-color: #289f38;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -346,7 +346,7 @@ h1 {
 .step-content h3 {
   margin-top: 10px;
   margin-bottom: 15px;
-  color: #9c27b0;
+  color: #289f38;
 }
 
 .step-content p {
@@ -374,7 +374,7 @@ h1 {
   
   .tab.active {
     border-bottom: 1px solid #333;
-    border-left: 3px solid #9c27b0;
+    border-left: 3px solid #289f38;
   }
   
   .steps {

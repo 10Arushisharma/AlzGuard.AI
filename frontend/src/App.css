@@ -27,11 +27,11 @@ body {
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #4a6bdf;
+  color: #289f38;
 }
 
 .sign-in-btn {
-  background-color: #4a6bdf;
+  background-color: #289f38;
   color: white;
   border: none;
   padding: 8px 20px;
@@ -53,7 +53,7 @@ body {
 }
 
 .nav-tab:hover {
-  color: #4a6bdf;
+  color: #289f38;
 }
 
 /* Slideshow Styles */
@@ -116,7 +116,7 @@ body {
 }
 
 .predict-btn {
-  background-color: #4a6bdf;
+  background-color: #289f38;
   color: white;
   border: none;
   padding: 12px 30px;
@@ -156,7 +156,7 @@ body {
 }
 
 .submit-btn {
-  background-color: #4a6bdf;
+  background-color: #289f38;
   color: white;
   border: none;
   padding: 12px 30px;
@@ -175,7 +175,7 @@ body {
 .result-text {
   font-size: 24px;
   margin: 15px 0;
-  color: #4a6bdf;
+  color: #289f38;
 }
 
 .confidence-text {

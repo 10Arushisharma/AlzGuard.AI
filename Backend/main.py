@@ -1,14 +1,14 @@
-# from flask import Flask, request, jsonify
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing import image
-# import numpy as np
-# import os
-# from flask_cors import CORS
+ #from flask import Flask, request, jsonify
+ #from tensorflow.keras.models import load_model
+ #from tensorflow.keras.preprocessing import image
+ #import numpy as np
+ #import os
+ #from flask_cors import CORS
 
 # app = Flask(__name__)
-# CORS(app, resources={r"/api/*": {"origins" : "http://localhost:3000"}})
+ #CORS(app, resources={r"/api/*": {"origins" : "http://localhost:3000"}})
 
-# app = Flask(__name__)
+ #app = Flask(__name__)
 
 # MODEL_PATH = "alzheimers_model.h5"
 # model = load_model(MODEL_PATH)
