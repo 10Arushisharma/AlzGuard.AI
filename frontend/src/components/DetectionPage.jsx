@@ -9,22 +9,28 @@ const DetectionPage = () => {
   const [image, setImage] = useState(null);
   const [result, setResult] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
+  // ------------------------------
+  // HANDLE IMAGE UPLOAD
+  // ------------------------------
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setImage(reader.result);
-      reader.readAsDataURL(file);
+      setSelectedFile(file); // save actual file
+      setImage(URL.createObjectURL(file)); // preview
     }
   };
 
+  // ------------------------------
+  // SEND MRI TO BACKEND
+  // ------------------------------
   const handlePredict = async () => {
-    if (!image) return;
+    if (!selectedFile) return;
     setIsAnalyzing(true);
+
     const formData = new FormData();
-    const fileBlob = await (await fetch(image)).blob();
-    formData.append("file", fileBlob, "mri_scan.jpg");
+    formData.append("file", selectedFile);
 
     try {
       const response = await axios.post(
@@ -42,11 +48,18 @@ const DetectionPage = () => {
     }
   };
 
+  // ------------------------------
+  // RESET ANALYSIS
+  // ------------------------------
   const startNewAnalysis = () => {
     setImage(null);
     setResult(null);
+    setSelectedFile(null);
   };
 
+  // ------------------------------
+  // DOWNLOAD REPORT
+  // ------------------------------
   const downloadPDF = (result, image) => {
     const doc = new jsPDF();
 
@@ -55,16 +68,20 @@ const DetectionPage = () => {
 
     doc.setFontSize(12);
     doc.text(`Prediction: ${result.prediction}`, 20, 40);
-    doc.text(`Confidence: ${result.confidence}`, 20, 50);
+    doc.text(
+      `Confidence: ${(result.confidence * 100).toFixed(2)}%`,
+      20,
+      50
+    );
 
     doc.text("Precautions:", 20, 70);
     result.precautions.forEach((p, i) => {
       doc.text(`- ${p}`, 25, 80 + i * 10);
     });
 
-    // Add uploaded MRI image
+    // Upload MRI image
     if (image) {
-      doc.addImage(image, "JPEG", 140, 30, 50, 50);
+      doc.addImage(image, "JPEG", 140, 30, 55, 55);
     }
 
     doc.save("MRI_Prediction_Report.pdf");
@@ -79,6 +96,7 @@ const DetectionPage = () => {
           analyzed. Human face photos will be rejected.
         </p>
 
+        {/* Navigation Tabs */}
         <div className="tabs">
           <button
             className={`tab ${activeTab === "upload" ? "active" : ""}`}
@@ -86,6 +104,7 @@ const DetectionPage = () => {
           >
             Upload Image
           </button>
+
           <button
             className={`tab ${activeTab === "camera" ? "active" : ""}`}
             onClick={() => setActiveTab("camera")}
@@ -94,16 +113,19 @@ const DetectionPage = () => {
           </button>
         </div>
 
+        {/* Upload Area */}
         {!image && (
           <div className="upload-area">
             <input type="file" accept="image/*" onChange={handleImageUpload} />
           </div>
         )}
 
+        {/* Analysis Section */}
         <div className="upload-section">
           {image && (
             <div className="analysis-section">
               <img src={image} alt="MRI" className="preview-img" />
+
               {!result && (
                 <button
                   className="btn-primary"
@@ -114,16 +136,19 @@ const DetectionPage = () => {
                 </button>
               )}
 
+              {/* Display Results */}
               {result && (
                 <div className="results">
                   <h2>Prediction: {result.prediction}</h2>
-                  <p>Confidence: {result.confidence}</p>
+                  <p>Confidence: {(result.confidence * 100).toFixed(2)}%</p>
+
                   <h3>Precautions:</h3>
                   <ul>
                     {result.precautions.map((p, idx) => (
                       <li key={idx}>{p}</li>
                     ))}
                   </ul>
+
                   <button
                     className="btn-primary"
                     onClick={() => downloadPDF(result, image)}
@@ -139,35 +164,40 @@ const DetectionPage = () => {
             </div>
           )}
         </div>
+
+        {/* How It Works Section */}
         <div className="how-it-works">
           <h2>How Our AI Works</h2>
+
           <div className="steps">
             <div className="step">
               <div className="step-number">1</div>
               <div className="step-content">
                 <h3>Upload MRI Scan</h3>
-                <p>Upload a brain MRI image through our secure platform</p>
+                <p>Upload a brain MRI image through our secure platform.</p>
               </div>
             </div>
+
             <div className="step">
               <div className="step-number">2</div>
               <div className="step-content">
                 <h3>AI Analysis</h3>
                 <p>
-                  Our AI analyzes brain structures to detect patterns of
-                  Alzheimer's
+                  Our AI analyzes brain structures to detect Alzheimer's patterns.
                 </p>
               </div>
             </div>
+
             <div className="step">
               <div className="step-number">3</div>
               <div className="step-content">
                 <h3>Receive Results</h3>
-                <p>Get instant results with personalized recommendations</p>
+                <p>Get instant results with personalized recommendations.</p>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
