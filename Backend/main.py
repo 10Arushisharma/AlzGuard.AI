@@ -201,8 +201,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-MODEL_PATH = "alzheimers_model.h5"
+MODEL_PATH = "alzheimers_model_trained.keras"
+
 model = load_model(MODEL_PATH)
+
 
 CLASSES = ["MildDemented", "ModerateDemented", "NonDemented", "VeryMildDemented"]
 
