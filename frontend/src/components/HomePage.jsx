@@ -100,7 +100,7 @@ const HomePage = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>BrainScan</h3>
+            <h3>AlzGuard.AI</h3>
             <p>AI-powered Alzheimer's detection and care recommendation system</p>
           </div>
           <div className="footer-section">
