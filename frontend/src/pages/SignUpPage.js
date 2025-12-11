@@ -127,7 +127,7 @@ const SignUpPage = () => {
     setTimeout(() => {
       setIsLoading(false);
       setActiveSocial(null);
-      alert('Logging in with ${provider}...');
+      alert(`Logging in with ${provider}...`);
     }, 1500);
   };
 
@@ -320,7 +320,7 @@ const SignUpPage = () => {
                 
                 <button 
                   type="submit" 
-                  className={"auth-submit ${isLoading ? 'loading' : ''}"}
+                  className={`auth-submit ${isLoading ? 'loading' : ''}`}
                   disabled={isLoading}
                 >
                   {isLoading ? (
