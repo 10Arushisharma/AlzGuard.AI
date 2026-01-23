@@ -1,156 +1,135 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-
-import {
-  AnimatedSection,
-  SlideInLeft,
-  SlideInRight
-} from "./AnimatedSection";
-
-import Slideshow from "./Slideshow";
-import StatCard from "./StatCard";
-import FeatureCard from "./FeatureCard";
-import TechFeature from "./TechFeature";
-import FloatingOrbs from "./FloatingOrbs";
-import NeuralNetwork from "./NeuralNetwork";
+// HomePage.jsx
+import React from 'react';
+import Slideshow from '../pages/Slideshow';
+import './HomePage.css';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden relative">
-      {/* Neural Network Background */}
-      <NeuralNetwork />
-
+    <div className="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-gray-100">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <FloatingOrbs />
-
-        <div className="container mx-auto px-6 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Hero Content */}
-            <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="inline-block px-4 py-2 rounded-full glass-card text-primary text-sm font-medium mb-6">
-                  🧠 Intelligent Health Screening
-                </span>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Timely Identification Powers{" "}
-                  <span className="text-gradient">Better Outcomes</span>
-                </h1>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl text-muted-foreground max-w-xl"
-              >
-                Our intelligent platform examines brain MRI imagery to identify
-                Alzheimer's indicators with remarkable accuracy.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex gap-4"
-              >
-                <Link to="/detection" className="btn-hero">
-                  Begin Assessment
-                </Link>
-                <Link to="/WhatToDo" className="btn-outline-hero">
-                  Discover the Process
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative h-[400px] lg:h-[500px]"
-            >
-              <div className="absolute inset-0 rounded-2xl">
-                <Slideshow />
-              </div>
-            </motion.div>
+      <section className="hero">
+        <div className="hero-content">
+          <h1 style={{ animation: 'slideIn 1s forwards'}}>Early Detection Is Key To Alzheimer's Care</h1>
+          <p>Our AI system analyzes brain MRI scans to detect Alzheimer's disease with high precision</p>
+          <div className="hero-buttons">
+            <a href="/detection" className="btn-secondary">Start Diagnosis</a>
+            <a href="/WhatToDo" className="btn-secondary">Learn How It Works</a>
           </div>
+        </div>
+        <div className="hero-image">
+          <Slideshow/>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-          <StatCard value="97%" label="Precision Score" />
-          <StatCard value="24/7" label="Always Online" delay={0.1} />
-          <StatCard value="3-5s" label="Analysis Duration" delay={0.2} />
+      <section className="stats">
+        <div className="stat-card">
+          <h2>97%</h2>
+          <p>Accuracy Rate</p>
+        </div>
+        <div className="stat-card">
+          <h2>24/7</h2>
+          <p>Availability</p>
+        </div>
+        <div className="stat-card">
+          <h2>3-5s</h2>
+          <p>Processing Time</p>
         </div>
       </section>
 
-      {/* Technology Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <SlideInLeft className="space-y-8">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Cutting-Edge System
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                We blend machine learning with clinical knowledge to deliver
-                precise Alzheimer's screening.
-              </p>
+      {/* About Technology Section */}
+      <section className="about-tech">
+        <div className="tech-content">
+          <h2>About Our Technology</h2>
+          <p>Our AI combines deep learning algorithms with medical expertise to provide accurate Alzheimer's detection and personalized care recommendations.</p>
+          <div className="tech-features">
+            <div className="tech-feature">
+              <h3>Advanced Image Processing</h3>
+              <p>Specialized algorithms for medical scan analysis</p>
             </div>
-
-            <div className="space-y-6">
-              <TechFeature
-                title="Sophisticated Scan Interpretation"
-                description="Algorithms designed for medical imaging"
-              />
-              <TechFeature
-                title="Neural Network Analysis"
-                description="AI models detect subtle brain variations"
-                delay={0.1}
-              />
-              <TechFeature
-                title="Clinician-Backed Validation"
-                description="Validated by neurology specialists"
-                delay={0.2}
-              />
+            <div className="tech-feature">
+              <h3>Deep Learning Classification</h3>
+              <p>Multiple neural networks identify brain patterns</p>
             </div>
-          </SlideInLeft>
-
-          <SlideInRight>
-            <img
-              src="https://files.infinitiresearch.com/wp-content/uploads/2018/02/iStock-493216371-1-1200x900.jpg"
-              alt="AI Medical Technology"
-              className="rounded-2xl"
-            />
-          </SlideInRight>
+            <div className="tech-feature">
+              <h3>Medical Expert Verification</h3>
+              <p>Validated by neurologists with decades of experience</p>
+            </div>
+          </div>
+        </div>
+        <div className="tech-image">
+          <img src="https://files.infinitiresearch.com/wp-content/uploads/2018/02/iStock-493216371-1-1200x900.jpg" />
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              What We Offer
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard title="Medicine Notifications" description="Timely alerts." />
-            <FeatureCard title="Activity Planning" description="Daily routines." />
-            <FeatureCard title="Facial Recognition Aid" description="Recognize loved ones." />
-            <FeatureCard title="Memory Keeper" description="Capture moments." />
+      {/* Features Section */}
+      <section className="features">
+        <h2>Our Features</h2>
+        <div className="feature-cards">
+          <div className="feature-card">
+            <div className="feature-icon">🧠</div>
+            <h3>Medication Reminders</h3>
+            <p>Alerts for pills with dosage & timing.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🏥</div>
+            <h3>Daily routine scheduling</h3>
+            <p>Simple to follow tasks (eat, walk, sleep).</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">📊</div>
+            <h3>Photo & name recognition</h3>
+            <p>Store faces of family/friends with captions.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🔬</div>
+            <h3>Personal memory journal</h3>
+            <p>Notes, voice memos, photos to preserve memories.</p>
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="cta">
+        <h2>Ready to detect Alzheimer's early?</h2>
+        <p>Our AI analyzes brain MRI scans to identify early signs of cognitive decline</p>
+        <button className="btn-primary"><a href='/detection'>Start Free Analysis</a></button>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>AlzGuard.AI</h3>
+            <p>AI-powered Alzheimer's detection and care recommendation system</p>
+          </div>
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h3>Contact</h3>
+            <p>Email: contact@alzguardai.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+          </div>
+        </div>
+        <div className="copyright">
+          <p>&copy; 2025 AlzGuard.AI. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
