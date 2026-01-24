@@ -9,7 +9,15 @@ const Header = () => {
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-gray-100">
       <header className="main-header">
         {/* 1. App Name / Logo */}
-        <div className="app-name">Alzheimer's Prediction</div>
+        <div className="app-name">
+  <img
+    src="/images/alzguard-logo.png"
+    alt="AlzGuard.AI Logo"
+    className="app-logo"
+  />
+  <span>AlzGuard.AI</span>
+</div>
+
 
         {/* 2. Navigation Links */}
         <nav className="main-nav">

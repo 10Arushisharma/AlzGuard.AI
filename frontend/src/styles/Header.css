@@ -16,12 +16,22 @@
     z-index: 1000;
 }
 
-/* --- App Name/Logo Styles --- */
+/* --- App Name / Logo Styles --- */
 .app-name {
-    font-size: 1.8em; 
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #acf4b6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 1.8em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #acf4b6;
+}
+
+/* Logo Image */
+.app-logo {
+  height: 42px;
+  width: auto;
 }
 
 /* --- Navigation List Styles --- */
