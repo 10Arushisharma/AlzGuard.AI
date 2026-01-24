@@ -1,7 +1,14 @@
 // // src/pages/SignUpPage.js
 import React, { useState, useEffect } from 'react';
 import '../styles/SignUpPage.css';
+import { auth, db } from "../firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
+  
 const SignUpPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
@@ -94,30 +101,60 @@ const SignUpPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (validateForm()) {
-      setIsLoading(true);
-      
-      // Simulate API call
-      setTimeout(() => {
-        setIsLoading(false);
-        alert(isLogin ? 'Login successful!' : 'Sign up successful!');
-        // Reset form
-        setFormData({
-          fullName: '',
-          email: '',
-          password: '',
-          confirmPassword: '',
-          phone: '',
-          dateOfBirth: '',
-          gender: '',
-          agreeToTerms: false
-        });
-      }, 2000);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!validateForm()) return;
+
+  setIsLoading(true);
+
+  try {
+    if (isLogin) {
+      // LOGIN
+      await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      alert("Login successful!");
+    } else {
+      // SIGN UP
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      await setDoc(doc(db, "users", userCredential.user.uid), {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        dateOfBirth: formData.dateOfBirth,
+        gender: formData.gender,
+        createdAt: new Date()
+      });
+
+      alert("Account created successfully!");
     }
-  };
+
+    setFormData({
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      phone: "",
+      dateOfBirth: "",
+      gender: "",
+      agreeToTerms: false
+    });
+
+  } catch (error) {
+    alert(error.message);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const handleSocialLogin = (provider) => {
     setActiveSocial(provider);
