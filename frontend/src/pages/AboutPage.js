@@ -70,14 +70,14 @@ const AboutPage = () => {
       name: "Anjali Sahni",
       role: "AI/ML Developer",
       bio: "Neurologist with 15+ years of experience in Alzheimer's research and treatment.",
-      image: "https://randomuser.me/api/portraits/women/68.jpg"
+      image: "/images/anjali.jpg"
     },
     {
       id: 2,
       name: "Arushi Sharma",
       role: "Lead Developer",
       bio: "Machine learning expert specializing in medical imaging and diagnostic algorithms.",
-      image: "/images/nihal.jpg"
+      image: "/images/aruhsi.jpeg"
     },
     
   ];
