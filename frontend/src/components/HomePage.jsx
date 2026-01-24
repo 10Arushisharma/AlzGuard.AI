@@ -2,6 +2,8 @@
 import React from 'react';
 import Slideshow from '../pages/Slideshow';
 import './HomePage.css';
+import { Link } from "react-router-dom";
+
 
 const HomePage = () => {
   return (
@@ -64,30 +66,49 @@ const HomePage = () => {
 
       {/* Features Section */}
       <section className="features">
-        <h2>Our Features</h2>
-        <div className="feature-cards">
-          <div className="feature-card">
-            <div className="feature-icon">🧠</div>
-            <h3>Medication Reminders</h3>
-            <p>Alerts for pills with dosage & timing.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🏥</div>
-            <h3>Daily routine scheduling</h3>
-            <p>Simple to follow tasks (eat, walk, sleep).</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📊</div>
-            <h3>Photo & name recognition</h3>
-            <p>Store faces of family/friends with captions.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🔬</div>
-            <h3>Personal memory journal</h3>
-            <p>Notes, voice memos, photos to preserve memories.</p>
-          </div>
-        </div>
-      </section>
+  <h2>Our Features</h2>
+
+  <div className="feature-cards">
+
+    {/* Medication */}
+    <Link to="/medication" className="feature-card-link">
+      <div className="feature-card">
+        <div className="feature-icon">💊</div>
+        <h3>Medication Reminders</h3>
+        <p>Alerts for pills with dosage & timing.</p>
+      </div>
+    </Link>
+
+    {/* Routine */}
+    <Link to="/routine" className="feature-card-link">
+      <div className="feature-card">
+        <div className="feature-icon">📅</div>
+        <h3>Daily Routine Scheduling</h3>
+        <p>Simple tasks like eat, walk, sleep.</p>
+      </div>
+    </Link>
+
+    {/* Recognition */}
+    <Link to="/recognition" className="feature-card-link">
+      <div className="feature-card">
+        <div className="feature-icon">🧠</div>
+        <h3>Photo & Name Recognition</h3>
+        <p>Recognize family & friends easily.</p>
+      </div>
+    </Link>
+
+    {/* Journal */}
+    <Link to="/journal" className="feature-card-link">
+      <div className="feature-card">
+        <div className="feature-icon">📓</div>
+        <h3>Personal Memory Journal</h3>
+        <p>Notes, voice memos & photos.</p>
+      </div>
+    </Link>
+
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="cta">

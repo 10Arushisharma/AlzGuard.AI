@@ -1,0 +1,16 @@
+.page {
+  padding: 40px;
+  background: #0f172a;
+  color: white;
+  min-height: 100vh;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input, button {
+  padding: 10px;
+}

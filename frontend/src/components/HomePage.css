@@ -322,3 +322,7 @@ body {
     flex-direction: column;
   }
 }
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+}
