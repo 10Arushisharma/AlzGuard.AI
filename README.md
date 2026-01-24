@@ -185,22 +185,6 @@ MONGO_URI = "mongodb+srv://<username>:<password>@cluster.mongodb.net/alzguard"
 
 ---
 
-## 🛠️ Common Issues
-
-### TensorFlow Compatibility
-- Use supported Python versions (**3.8 – 3.11 recommended**)
-
-### CORS Errors
-- Enable CORS in Flask for:
-http://localhost:3000
-
-
-### Grad-CAM Issues
-- Ensure correct **MRI image format**
-- Verify valid **model weight files** and correct **path configuration**
-
----
-
 ## ⚠️ Disclaimer
 
 AlzGuard.AI is intended for **research and educational purposes only**.  
