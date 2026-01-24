@@ -1,46 +1,47 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/FeaturePages.css";
 
-export default function MedicationPage() {
-  const [medicine, setMedicine] = useState("");
+const MedicationPage = () => {
+  const [name, setName] = useState("");
   const [time, setTime] = useState("");
-  const [list, setList] = useState([]);
+  const [meds, setMeds] = useState([]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("medications"));
+    if (saved) setMeds(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("medications", JSON.stringify(meds));
+  }, [meds]);
 
   const addMedicine = () => {
-    if (!medicine || !time) return;
-    setList([...list, { medicine, time }]);
-    setMedicine("");
+    if (!name || !time) return;
+    setMeds([...meds, { name, time }]);
+    setName("");
     setTime("");
   };
 
   return (
     <div className="feature-page">
-      <div className="feature-container">
-        <div className="feature-title">💊 Medication Reminders</div>
+      <div className="feature-header">💊 <h1>Medication Reminders</h1></div>
 
+      <div className="feature-card">
         <div className="input-row">
-          <input
-            placeholder="Medicine name"
-            value={medicine}
-            onChange={(e) => setMedicine(e.target.value)}
-          />
-          <input
-            type="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
+          <input placeholder="Medicine name" value={name} onChange={e => setName(e.target.value)} />
+          <input type="time" value={time} onChange={e => setTime(e.target.value)} />
           <button onClick={addMedicine}>Add</button>
         </div>
 
-        <div className="list">
-          {list.map((item, i) => (
-            <div key={i} className="list-item">
-              <span>{item.medicine}</span>
-              <span>{item.time}</span>
-            </div>
-          ))}
-        </div>
+        {meds.map((m, i) => (
+          <div className="list-item" key={i}>
+            <span>{m.name} — {m.time}</span>
+            <button className="delete-btn" onClick={() => setMeds(meds.filter((_, idx) => idx !== i))}>✕</button>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default MedicationPage;

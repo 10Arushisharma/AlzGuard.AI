@@ -1,24 +1,45 @@
+import React, { useEffect, useState } from "react";
 import "../styles/FeaturePages.css";
 
-export default function RecognitionPage() {
+const RecognitionPage = () => {
+  const [people, setPeople] = useState([]);
+  const [name, setName] = useState("");
+  const [relation, setRelation] = useState("");
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("people"));
+    if (saved) setPeople(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("people", JSON.stringify(people));
+  }, [people]);
+
   return (
     <div className="feature-page">
-      <div className="feature-container">
-        <div className="feature-title">🧠 Face Recognition</div>
+      <div className="feature-header">🧠 <h1>Recognition Memory</h1></div>
 
-        <p style={{ opacity: 0.8 }}>
-          Upload photos and store names of family & friends.
-        </p>
-
+      <div className="feature-card">
         <div className="input-row">
-          <input placeholder="Person name" />
-          <button>Save</button>
+          <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
+          <input placeholder="Relation" value={relation} onChange={e => setRelation(e.target.value)} />
+          <button onClick={() => {
+            if (!name || !relation) return;
+            setPeople([...people, { name, relation }]);
+            setName(""); setRelation("");
+          }}>
+            Save
+          </button>
         </div>
 
-        <p style={{ marginTop: 20, fontSize: "0.9rem", opacity: 0.6 }}>
-          (Face recognition logic can be integrated later)
-        </p>
+        {people.map((p, i) => (
+          <div className="list-item" key={i}>
+            <span>{p.name} — {p.relation}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default RecognitionPage;
