@@ -1,60 +1,3 @@
-// src/pages/AboutPage.js
-// import React from 'react';
-// import Header from './Header';
-
-// const AboutPage = () => {
-//   return (
-//     // <div className="page-content about-page">
-//     //   <h1>About Our AI System</h1>
-//     //   <p>We leverage state-of-the-art deep learning models trained on vast datasets of anonymized brain MRI scans to achieve industry-leading precision in Alzheimer's early detection.</p>
-//     //   <h2>Our Mission</h2>
-//     //   <p>To provide accessible, high-speed, and accurate preliminary screening tools to assist in global Alzheimer's care.</p>
-//     // </div>
-//     <div className="container">
-      
-//       <div className="row p-3 mt-5 border-top">
-//         <h1 className="text-center ">People</h1>
-//       </div>
-
-//       <div
-//         className="row p-3 text-muted"
-//         style={{ lineHeight: "1.8", fontSize: "1.2em" }}
-//       >
-//         <div className="col-6 p-3 text-center">
-//           <img
-//             src="/images/nihal.jpg"
-//             style={{ borderRadius: "100%", width: "10%" }}
-//           />
-//           <h4 className="mt-5">Nihal Tosavda</h4>
-//           <h6>Founder, CEO</h6>
-//         </div>
-//         <div className="col-6 p-3">
-//           <p>
-//             Nithin bootstrapped and founded Zerodha in 2010 to overcome the
-//             hurdles he faced during his decade long stint as a trader. Today,
-//             Zerodha has changed the landscape of the Indian broking industry.
-//           </p>
-//           <p>
-//             He is a member of the SEBI Secondary Market Advisory Committee
-//             (SMAC) and the Market Data Advisory Committee (MDAC).
-//           </p>
-//           <p>Playing basketball is his zen.</p>
-//           <p>
-//             Connect on <a href="">Homepage</a> / <a href="">TradingQnA</a> /{" "}
-//             <a href="">Twitter</a>
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AboutPage;
-
-
-
-
-
 // AboutPage.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/AboutPage.css';
@@ -66,20 +9,20 @@ const AboutPage = () => {
   // Team member data
   const teamMembers = [
     {
-      id: 1,
-      name: "Anjali Sahni",
-      role: "AI/ML Developer",
-      bio: "Neurologist with 15+ years of experience in Alzheimer's research and treatment.",
-      image: "/images/anjali.jpg"
-    },
-    {
-      id: 2,
-      name: "Arushi Sharma",
-      role: "Lead Developer",
-      bio: "Machine learning expert specializing in medical imaging and diagnostic algorithms.",
-      image: "/images/aruhsi.jpeg"
-    },
-    
+  id: 1,
+  name: "Anjali Sahni",
+  role: "AI/ML Developer",
+  bio: "AI/ML developer focused on building intelligent solutions using machine learning, deep learning, and data-driven systems. Experienced in developing practical AI features for web platforms and experimental applications.",
+  image: "/images/anjali.jpg"
+},
+{
+  id: 2,
+  name: "Arushi Sharma",
+  role: "Lead Developer",
+  bio: "Lead developer experienced in designing scalable software systems, guiding technical architecture, and coordinating development workflows. Focused on delivering reliable, efficient, and maintainable solutions.",
+  image: "/images/arushi.jpeg"
+}
+
   ];
 
   // Company values
@@ -298,63 +241,6 @@ const AboutPage = () => {
           <button className="btn-secondary">Support Our Cause</button>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>AlzheimerCare</h3>
-            <p>Pioneering AI solutions for Alzheimer's detection and care</p>
-            <div className="social-icons">
-              <a href="#" className="social-icon">📱</a>
-              <a href="#" className="social-icon">🐦</a>
-              <a href="#" className="social-icon">📸</a>
-              <a href="#" className="social-icon">📺</a>
-            </div>
-          </div>
-          
-          <div className="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Detection Tool</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className="footer-section">
-            <h3>Resources</h3>
-            <ul>
-              <li><a href="#">Research Papers</a></li>
-              <li><a href="#">Clinical Trials</a></li>
-              <li><a href="#">Patient Stories</a></li>
-              <li><a href="#">Caregiver Support</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-          
-          <div className="footer-section">
-            <h3>Contact Us</h3>
-            <p>123 Medical Center Drive</p>
-            <p>Boston, MA 02115</p>
-            <p>Email: info@alzheimercare.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-          </div>
-        </div>
-        
-        <div className="footer-bottom">
-          <div className="copyright">
-            <p>&copy; {new Date().getFullYear()} AlzheimerCare Inc. All rights reserved.</p>
-          </div>
-          <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
