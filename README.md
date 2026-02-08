@@ -4,6 +4,7 @@
 AlzGuard.AI is an end-to-end AI-powered web application designed to assist in the **early detection and stage-wise classification of Alzheimer’s Disease** using brain MRI scans.  
 The platform combines **deep learning**, **medical explainability**, and a **user-friendly web interface** to support clinicians, caregivers, and users in understanding cognitive health risks—early and transparently.
 
+🔗Live platform: https://alz-guard-ai.vercel.app/
 ---
 
 ## 🚀 Key Features
